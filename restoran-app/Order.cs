@@ -7,11 +7,20 @@ using System.Numerics;
 
 namespace restoran_app
 {
+    // Just a plan
+    public interface IOrder
+    {
+        string GetCustomerDetails();
+        string GetStatusString();
+        string GetNextStatusString();
+        bool AdvanceStatus();
+    }
+
     public enum API
     {
         Trendyol,
-        YemekSepeti,
-        GetirYemek
+        Yemeksepeti,
+        Getir
     }
     public enum PackageStatus
     {

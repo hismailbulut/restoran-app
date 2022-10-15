@@ -5,6 +5,11 @@ using System.Numerics;
 
 namespace restoran_app
 {
+    /// <summary>
+    /// TODO List
+    /// - Online veya kapýda ödeme
+    /// - Kuryeyi kimin göndereceði (restoran mý yoksa þirket mi)
+    /// </summary>
     public partial class MainForm : Form
     {
         List<Order> orders;
@@ -218,6 +223,7 @@ namespace restoran_app
                 try
                 {
                     orders.AddRange(await trendyolOrdersTask);
+                    Logger.LogInfo("Orders count: {0}", orders.Count);
                 }
                 catch (Exception e)
                 {
@@ -230,6 +236,7 @@ namespace restoran_app
                 try
                 {
                     orders.AddRange(await yemeksepetiOrdersTask);
+                    Logger.LogInfo("Orders count: {0}", orders.Count);
                 }
                 catch (Exception e)
                 {
@@ -242,6 +249,7 @@ namespace restoran_app
                 try
                 {
                     orders.AddRange(await getirOrdersTask);
+                    Logger.LogInfo("Orders count: {0}", orders.Count);
                 }
                 catch (Exception e)
                 {
